@@ -1,0 +1,37 @@
+public class test {
+
+	public static void main(String[] args) {
+		int na=5;
+		int [][]array=new int[na][na];
+		int nr,nc,r=0,c=(int)na/2,n=1;
+		
+		for(int i=0;i<na*na;i++) {
+			array[r][c]=n;
+			n++;
+			if(r<=0) {
+				nr=na-1;
+			}else {
+				nr=r-1;
+			}
+			if(c>=na-1) {
+				nc=0;
+			}else {
+				nc=c+1;
+			}
+			if(array[nr][nc]!=0) {
+				r+=1;
+			}else {
+				r=nr;
+				c=nc;
+			}
+		}
+		for(int i=0;i<na;i++) {
+			for(int j=0;j<na;j++) {
+				System.out.printf("%3d ",array[i][j]);
+			}
+			System.out.println();
+		}
+
+	}
+
+}
