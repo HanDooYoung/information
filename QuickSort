@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class test {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		int N;
+		N = sc.nextInt();
+		int value[] = new int[N];
+
+		for (int i = 0; i < N; i++) {
+			value[i] = sc.nextInt();
+		}
+
+		quick(value, 0, N - 1);
+
+		for (int i = 0; i < N; i++) {
+			System.out.println(value[i]);
+		}
+	}
+
+	public static void quick(int[] array, int front, int rear) {
+		int temp;
+		if(front>=rear) {
+			return;
+		}
+		int p=array[front];
+		int i=front+1;
+		int j=rear;
+		while(i<=j) {
+			while(p>array[i]&&i<rear) {
+				i++;
+			}
+			while(p<array[j]&&j>front) {
+				j--;
+			}
+			if(i>=j) {
+				break;
+			}
+			temp=array[i];
+			array[i]=array[j];
+			array[j]=temp;
+		}
+		temp=array[j];
+		array[j]=array[front];
+		array[front]=temp;
+		quick(array,front,j-1);
+		quick(array,j+1,rear);
+	}
+
+}
