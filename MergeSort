@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class test {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int A[]= {2,5,10,17,20};
+		int B[]= {11,9,8,7};
+		int AB[]=new int[A.length+B.length];
+		int a=0,b=B.length-1;
+		for(int i=0;i<AB.length;i++) {
+			if(A.length>a&&b>=0) {
+				if(A[a]>B[b]) {
+					AB[i]=B[b];
+					b--;
+				}else {
+					AB[i]=A[a];
+					a++;
+				}
+			}else {
+				if(A.length==a) {
+					AB[i]=B[b];
+					b--;
+				}else {
+					AB[i]=A[a];
+					a++;
+				}
+			}
+		}
+		for(int i=0;i<AB.length;i++) {
+			System.out.println(AB[i]);
+		}
+	}
+}
