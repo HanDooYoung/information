@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class test {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int array[][] = new int[5][5];
+		int ar[][] = new int[5][5];
+		int count = 1, r = 0, c = 0;
+		for (int i = 0; i < 5; i++) {
+			for (int j = 0; j < 5; j++) {
+				array[i][j] = count++;
+			}
+		}
+		for (int i = 4; i >= 0; i--) {
+			for (int j = 0; j < 5; j++) {
+				ar[j][i] = array[r][c];
+				c++;
+				if (c == 5) {
+					c = 0;
+				}
+			}
+			r++;
+		}
+		for (int i = 0; i < 5; i++) {
+			for (int j = 0; j < 5; j++) {
+				System.out.printf("%2d ", ar[i][j]);
+			}
+			System.out.println();
+		}
+	}
+}
