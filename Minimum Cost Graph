@@ -1,0 +1,38 @@
+public class test {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int C[] = { 4, 2, 10, 7, 12, 15, 18, 20, 9, 13, 1 };
+		int CYCLE[] = { 0, 0, 0, 0, 0, 1, 0 };
+		int N = 7;
+		int E = 11;
+		int TEMP;
+		for (int i = 0; i < 11; i++) {
+			System.out.print(C[i] + "\t");
+		}
+		for (int i = 0; i < E - 1; i++) {
+			for (int j = i + 1; j < E; j++) {
+				if (C[i] > C[j]) {
+					TEMP = C[i];
+					C[i] = C[j];
+					C[j] = TEMP;
+				}
+			}
+		}
+		System.out.println();
+		for (int i = 0; i < 11; i++) {
+			System.out.print(C[i] + "\t");
+		}
+		int L = 1;
+		int K = 0;
+		int T = 0;
+		while (L <= (N - 1)) {
+			if (CYCLE[K] == 0) {
+				T = T + C[K];
+				L = L + 1;
+			}
+			K = K + 1;
+		}
+		System.out.println("\n가중치 총합 : " + T);
+	}
+}
