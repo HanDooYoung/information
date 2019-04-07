@@ -1,0 +1,27 @@
+public class test {
+
+	public static void main(String[] args) {
+		int T[] = new int[10];
+		int S = 0;
+		int i = 0;
+		int j = 0;
+		for (j = 0; j < 10; j++) {
+			T[j] = (int) (Math.random() * 120) + 1;
+			System.out.print("T[" + j + "]: " + T[j] + "\n");
+		}
+		do {
+			S += T[i];
+			i++;
+		} while (i < 10);
+		double M = S / 10;
+		int CNT = 0;
+		i = 0;
+		do {
+			if (T[i] > M) {
+				CNT++;
+			}
+			i++;
+		} while (i < 10);
+		System.out.println("TOEFL평균: " + M + "\n평균점보다 높은 학생 수: " + CNT);
+	}
+}
