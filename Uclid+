@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class test {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int X, Y, XY, temp;
+		X = sc.nextInt();
+		Y = sc.nextInt();
+		XY = X * Y;
+		if (X < Y) {
+			temp = X;
+			X = Y;
+			Y = temp;
+		}
+		while (true) {
+			temp = X % Y;
+			if (temp == 0) {
+				break;
+			}
+			X = Y;
+			Y = temp;
+		}
+		System.out.println(XY / Y);
+		System.out.println(Y);
+	}
+
+}
