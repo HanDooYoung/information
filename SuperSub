@@ -1,0 +1,29 @@
+public class test {
+
+	public static void main(String[] args) {
+		superproject a = new subproject();
+		a.paint();
+	}
+
+}
+
+class superproject {
+	void drow() {
+
+	}
+
+	void paint() {
+		drow();
+		System.out.println("super");
+	}
+}
+
+class subproject extends superproject {
+	void drow() {
+		System.out.println("sub");
+	}
+
+	void paint() {
+		super.paint();
+	}
+}
