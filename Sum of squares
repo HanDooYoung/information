@@ -1,0 +1,16 @@
+public class test {
+
+	public static void main(String[] args) throws IOException {
+		int A=0,B=0;
+		int S=0,C=0;
+		do {
+			A++;
+			B=101-A;
+			C=A*B;
+			C=C*C;
+			S+=C;
+		}while(A<100);
+		System.out.println(S);
+	}
+
+}
